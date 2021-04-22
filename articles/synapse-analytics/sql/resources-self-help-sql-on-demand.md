@@ -429,6 +429,9 @@ To resolve this, create a master key with the following query:
 CREATE MASTER KEY [ ENCRYPTION BY PASSWORD ='password' ];
 ```
 
+> [!NOTE]
+> Replace 'password' with a different secret here. 
+
 
 
 ## Next steps
