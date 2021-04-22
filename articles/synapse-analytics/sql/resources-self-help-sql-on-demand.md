@@ -304,11 +304,15 @@ causes this result table
 There seems to be no value in our column “firstname”. Instead, all values did end up being in column “ID”. Those values are separated by comma. 
 The problem was caused by this line of code as it is necessary to choose the comma instead of the semicolon symbol as field terminator:
 
-```FIELDTERMINATOR =';',```
+```sql
+FIELDTERMINATOR =';',
+```
 
 Changing this single character solves the problem:
 
-```FIELDTERMINATOR =',',```
+```sql
+FIELDTERMINATOR =',',
+```
 
 The result table created by query 2 looks now as expected. 
 
