@@ -92,7 +92,7 @@ WITH ( FORMAT_TYPE = PARQUET)
 
 ## Query fails with error while handling an external file. 
 
-If your query fails with the error message “error handling external file: Max errors count reached’, it means that there is a mismatch of a specified column type and the data that needs to be loaded. 
+If your query fails with the error message 'error handling external file: Max errors count reached', it means that there is a mismatch of a specified column type and the data that needs to be loaded. 
 To get more information about the error and which rows and columns to look at, change the parser version from ‘2.0’ to ‘1.0’. 
 
 ### Example
@@ -164,7 +164,7 @@ FROM
 
 ## Query fails with error: Websocket connection was closed unexpectedly.
 
-If your query fails with the error message: ```Websocket connection was closed unexpectedly```, it means that your browser connection to Synapse Studio was interrupted, for example because of a network issue. 
+If your query fails with the error message: 'Websocket connection was closed unexpectedly', it means that your browser connection to Synapse Studio was interrupted, for example because of a network issue. 
 
 To resolve this, rerun this query. If this message occurs often in your environment, advise help from your network administrator, check firewall settings and [visit this troubleshooting guide for more information](https://docs.microsoft.com/en-us/azure/synapse-analytics/troubleshoot/troubleshoot-synapse-studio). 
 
@@ -172,7 +172,7 @@ If the issue still continues, create a [support ticket](https://docs.microsoft.c
 
 ## Query fails with conversion error
 If your query fails with the error message 
-```bulk load data conversion error (type mismatches or invalid character for the specified codepage) for row n, column m [columnname] in the data file [filepath]```, it means that your data types did not match the actual data for row number n and column m. 
+'bulk load data conversion error (type mismatches or invalid character for the specified codepage) for row n, column m [columnname] in the data file [filepath]', it means that your data types did not match the actual data for row number n and column m. 
 
 For instance, if you expect only integers in your data but in row n there might be a string, this is the error message you will get. 
 To resolve this, inspect the file and the according data types you did choose. Also check if your row delimiter and field terminator settings are correct. The following example shows how inspecting can be done using VARCHAR as column type. 
@@ -212,7 +212,7 @@ FROM
 ```
 
 causes this error: 
-```Bulk load data conversion error (type mismatch or invalid character for the specified codepage) for row 6, column 1 (ID) in data file [filepath]```
+'Bulk load data conversion error (type mismatch or invalid character for the specified codepage) for row 6, column 1 (ID) in data file [filepath]'
 
 It is necessary to browse the data and make an informed decision to handle this. 
 To look at the data that causes this problem, the data type needs to be changed first. Instead of querying column “ID” with the data type “SMALLINT”, VARCHAR(100) is now used to analyze this issue. 
@@ -344,7 +344,7 @@ returns
 
 ## Query fails with error: Column [column name] of type [type name] is  not compatible with external data type [external data type name] 
 
-If your query fails with the error message ```Column [column name] of type [type name] is not compatible with external data type […]```, it is likely that tried to map a PARQUET data type to the wrong SQL data type. 
+If your query fails with the error message 'Column [column name] of type [type name] is not compatible with external data type […]', it is likely that tried to map a PARQUET data type to the wrong SQL data type. 
 For instance, if you your parquet file has a column price with float numbers (like 12,89) and you tried to map it to INT, this is the error message you will get. 
 
 To resolve this, inspect the file and the according data types you did choose. This [mapping table](https://docs.microsoft.com/en-us/azure/synapse-analytics/sql/develop-openrowset#type-mapping-for-parquet) helps to choose a SQL data type. 
@@ -352,7 +352,7 @@ Best practice hint: Specify mapping only for columns that would otherwise resolv
 Avoiding VARCHAR when possible, leads to better performance in queries. 
 
 ### Example
-If you would like to query the file ```taxi-data.parquet``` with this Query 1, Synapse SQL Serverless will return with such error.
+If you would like to query the file 'taxi-data.parquet' with this Query 1, Synapse SQL Serverless will return with such error.
 
 taxi-data.parquet:
 | PassengerCount        | SumTripDistance           | AvgTripDistance  |
@@ -380,7 +380,7 @@ FROM
 
     AS [result]
 ```
-causes this error: ```Column 'SumTripDistance' of type 'INT' is not compatible with external data type 'Parquet physical type: DOUBLE', please try with 'FLOAT'. File/External table name: '<filepath>taxi-data.parquet'.```
+causes this error: 'Column 'SumTripDistance' of type 'INT' is not compatible with external data type 'Parquet physical type: DOUBLE', please try with 'FLOAT'. File/External table name: '<filepath>taxi-data.parquet'.'
 
 This error messages tells us that data types are not compatible and already comes with the suggestion to use the FLOAT instead of INT. 
 The error is hence caused by this line of code: 
@@ -413,7 +413,7 @@ FROM
 
 ## Query fails with: Please create a master key in the database or open the master key in the session before performing this operation.
 
-If your query fails with the error message ```Please create a master key in the database or open the master key in the session before performing this operation.```, it means that your user database has no access to a master key in the moment. 
+If your query fails with the error message 'Please create a master key in the database or open the master key in the session before performing this operation.', it means that your user database has no access to a master key in the moment. 
 
 Most likely, you just created a new user database and did not create a master key yet. 
 
