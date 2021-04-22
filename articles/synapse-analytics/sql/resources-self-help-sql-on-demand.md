@@ -60,7 +60,7 @@ If your query fails with the error message 'This query can't be executed due to 
 
 - Visit [performance best practices for serverless SQL pool](best-practices-sql-on-demand.md) to optimize query.  
 
-## CREATE 'STATEMENT' is not supported in master database
+## CREATE STATEMENT is not supported in master database
 
 If your query fails with the error message:
 
