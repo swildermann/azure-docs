@@ -108,7 +108,7 @@ Id,first name,
 5,Eva
 ```
 
-Query 1
+Query 1:
 ```sql
 SELECT
     TOP 100 *
@@ -316,6 +316,7 @@ FIELDTERMINATOR =',',
 
 The result table created by query 2 looks now as expected. 
 
+Query 2:
 ```sql
 SELECT
     TOP 100 *
@@ -398,7 +399,6 @@ SumTripDistance INT,
 Using this slightly changed Query 2, the data can now be processed and shows all three columns. 
 
 Query 2: 
-
 ```sql
 SELECT
     *
