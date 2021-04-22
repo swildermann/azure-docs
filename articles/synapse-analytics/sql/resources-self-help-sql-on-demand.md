@@ -37,6 +37,7 @@ If you want to give permission only for a this or a subset of files, this is how
 * Log into Synapse with a admin user that has full permissions on the data you want to access.
 
 * In the data pane, right click on the file and select MANAGE ACCESS.
+
 ![Recursive data for external tables](./media/resources-self-help-sql-on-demand/manage_access.png)
 
 * Choose at least “read” permission, type in the users UPN or Object ID, e.g. user@contoso.com and click Add
