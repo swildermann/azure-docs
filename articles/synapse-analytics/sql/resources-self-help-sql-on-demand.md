@@ -212,7 +212,7 @@ FROM
 ```
 
 causes this error: 
-'Bulk load data conversion error (type mismatch or invalid character for the specified codepage) for row 6, column 1 (ID) in data file [filepath]'
+```Bulk load data conversion error (type mismatch or invalid character for the specified codepage) for row 6, column 1 (ID) in data file [filepath]```
 
 It is necessary to browse the data and make an informed decision to handle this. 
 To look at the data that causes this problem, the data type needs to be changed first. Instead of querying column “ID” with the data type “SMALLINT”, VARCHAR(100) is now used to analyze this issue. 
@@ -380,7 +380,9 @@ FROM
 
     AS [result]
 ```
-causes this error: 'Column 'SumTripDistance' of type 'INT' is not compatible with external data type 'Parquet physical type: DOUBLE', please try with 'FLOAT'. File/External table name: '<filepath>taxi-data.parquet'.'
+causes this error: 
+
+```Column 'SumTripDistance' of type 'INT' is not compatible with external data type 'Parquet physical type: DOUBLE', please try with 'FLOAT'. File/External table name: '<filepath>taxi-data.parquet'.```
 
 This error messages tells us that data types are not compatible and already comes with the suggestion to use the FLOAT instead of INT. 
 The error is hence caused by this line of code: 
